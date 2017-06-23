@@ -37,7 +37,6 @@ public class UserContrler {
 	}
 	@RequestMapping("/userlist.do")
 	public ModelAndView userList(String pageNumStr,String pageSizeStr){
-		
 		int pageNum = Constant.DEFAULT_PAGE_NUM; //显示第几页数据
 		if (pageNumStr!=null&&!pageNumStr.trim().equals("")) {
 			pageNum=Integer.parseInt(pageNumStr);

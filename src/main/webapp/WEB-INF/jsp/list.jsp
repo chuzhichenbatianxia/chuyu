@@ -1,7 +1,4 @@
 <%@page import="com.yu.entity.Pager"%>
-<%@page import="javax.json.JsonObject"%>
-<%@page import="javax.json.Json"%>
-<%@page import="org.springframework.web.context.request.RequestScope"%>
 <%@page import="com.yu.entity.User"%>
 <%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
