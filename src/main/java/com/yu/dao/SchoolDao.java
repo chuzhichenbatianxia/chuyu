@@ -23,10 +23,10 @@ public class SchoolDao {
 	private Integer localIs;
 	private Integer townIs;
 	private String businessName;
-	
+
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
-	
+
 	//查询学校全部学生信息
 	public List<School> queryStudentList(){
 		

@@ -19,7 +19,7 @@ import com.yu.entity.School;
 
 /**
  * 
- * @author Administrator
+ * @author 朱玉平
  * @excell 导入导出表
  */
 public class ExcelUtilsGenerate {
