@@ -22,15 +22,9 @@ public class UserContrler {
 	private UserService userService;
 	
 	@RequestMapping("/useradd.do")
-	public String success(String name,Integer age,Double salary,String birthday,Float score) {
+	public String useradd(User user) {
 		
-		System.out.println(age+name+salary+birthday+score);
-		user = new User();
-		user.setName(name);
-		user.setAge(age);
-		user.setBirthday(birthday);
-		user.setSalary(salary);
-		user.setScore((float)score);
+		System.out.println(user.toString());
 		userService.addUser(user);
 		System.out.println("数据添加成功");
 		
@@ -59,14 +53,9 @@ public class UserContrler {
 	}
 	
 	@RequestMapping("/updateuser.do")
-	public String updateUser(int userid,String name,Integer age,Double salary,String birthday,Float score) {
-		user = new User();
-		user.setName(name);
-		user.setAge(age);
-		user.setBirthday(birthday);
-		user.setSalary(salary);
-		user.setScore((float)score);
-		userService.updateUser(userid, user);
+	public String updateUser(User user) {
+		System.out.println(user.toString());
+		userService.updateUser(user.getId(), user);
 		return "successup";
 	}
 		

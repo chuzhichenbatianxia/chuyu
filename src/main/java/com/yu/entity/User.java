@@ -51,9 +51,15 @@ public class User {
 		this.score = score;
 	}
 	
-
 	@Override
 	public String toString() {
-		return "name:"+name+"age:"+age+"salary:"+salary+"birthday:"+birthday+"score"+score;
+		return "User{" +
+				"id=" + id +
+				", name='" + name + '\'' +
+				", age=" + age +
+				", salary=" + salary +
+				", birthday='" + birthday + '\'' +
+				", score=" + score +
+				'}';
 	}
 }

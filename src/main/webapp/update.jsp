@@ -10,7 +10,7 @@
 		<h3>修改用户</h3>
 		<form name="form1" action="user/updateuser.do" method="post"
 			onsubmit="return isValidate(form1)">
-			<input name="userid" type="hidden" id="userid" value="<%=request.getParameter("id") %>" />
+			<input name="id" type="hidden" id="id" value="<%=request.getParameter("id") %>" />
 			<table width="550" cellpadding="0" cellspacing="0"
 				style="line-height: 40px">
 

@@ -17,23 +17,13 @@ import com.yu.entity.User;
 
 @Repository
 public class UserDao {
-	private String name;
-	private int age;
-	private double salary;
-	private String birthday;
-	private float score;
 	@Autowired
 	private JdbcTemplate jdbcTemplate;
 	
 	//增加
 	public void addUser(User user){
-		name = user.getName();
-		age = user.getAge();
-		salary = user.getSalary();
-		birthday = user.getBirthday();
-		score = user.getScore();
 		String sql="INSERT into jdbctest_tab(name,age,salary,birthday,score) VALUE(?,?,?,?,?)";
-		Object[] object={name,age,salary,birthday,score};
+		Object[] object={user.getName(),user.getAge(),user.getSalary(),user.getBirthday(),user.getScore()};
 		jdbcTemplate.update(sql, object);
 	}
 
@@ -77,9 +67,8 @@ public class UserDao {
 		int fromIndex	= pageSize * (pageNum -1);
 		//使用limit组装分页查询语句
 		String sql="select *from jdbctest_tab limit ?,?";
-		List<User> listUser=new ArrayList<>();
 		Object[] args={fromIndex,pageSize};
-		listUser=jdbcTemplate.query(sql, args, new BeanPropertyRowMapper<User>(User.class));
+		List<User> listUser=jdbcTemplate.query(sql, args, new BeanPropertyRowMapper<User>(User.class));
 
 
 		result=new Pager<>(pageSize, pageNum, totalRecord, totalPage, listUser);
@@ -93,11 +82,6 @@ public class UserDao {
 	
 	//修改
 	public void updateUser(int id,User user){
-		name = user.getName();
-		age = user.getAge();
-		salary = user.getSalary();
-		birthday = user.getBirthday();
-		score = user.getScore();
 		String sql="update jdbctest_tab set name='"+user.getName()+"',age='"+user.getAge()+"',salary='"+user.getSalary()+"',birthday='"+user.getBirthday()+"',score='"+user.getScore()+"' where id=?";
 		jdbcTemplate.update(sql, id);
 	}
