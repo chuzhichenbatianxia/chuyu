@@ -73,6 +73,14 @@ CREATE TABLE `school` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8;
 
+CREATE TABLE `sys_user` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `userName` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `sex` tinyint(4) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
 -- ----------------------------
 -- Records of school
 -- ----------------------------

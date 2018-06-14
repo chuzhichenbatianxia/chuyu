@@ -3,6 +3,7 @@ package com.yu.controler;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
@@ -30,6 +31,7 @@ public class UserContrler {
 		
 		return "success";
 	}
+
 	@RequestMapping("/userlist.do")
 	public ModelAndView userList(String pageNumStr,String pageSizeStr){
 		int pageNum = Constant.DEFAULT_PAGE_NUM; //显示第几页数据

@@ -30,9 +30,9 @@
     <!-- 防止Spring内存溢出监听器 -->  
     <listener>  
         <listener-class>org.springframework.web.util.IntrospectorCleanupListener</listener-class>  
-    </listener>  
-  
-    <!-- Spring MVC servlet -->  
+    </listener>
+
+    <!-- Spring MVC servlet -->
     <servlet>  
         <servlet-name>SpringMVC</servlet-name>  
         <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>  
